@@ -3,19 +3,19 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer className="bg-[#0F0F1D] text-white py-10 px-6 text-center">
-            {/* Branding */}
+
             <div className="mb-6">
                 <h1 className="text-3xl font-extrabold">Imtiaz Ahmed</h1>
             </div>
 
-            {/* Navigation Links */}
+
             <nav className="flex justify-center gap-6 mb-6">
                 <a className="hover:underline" href="#">About Me</a>
                 <a className="hover:underline" href="#">Contact</a>
                 <a className="hover:underline" href="#">Privacy Policy</a>
             </nav>
 
-            {/* Social Media Icons */}
+
             <div className="flex justify-center gap-6 mb-6">
                 <a href="https://www.linkedin.com/in/imtiaz-ahmed-25a357201" target="_blank" rel="noopener noreferrer">
                     <svg className="w-6 h-6 fill-current hover:text-blue-500" viewBox="0 0 50 50">
@@ -34,7 +34,7 @@ const Footer = () => {
                 </a>
             </div>
 
-            {/* Copyright */}
+
             <div className="text-gray-400 text-sm">
                 <p>© {new Date().getFullYear()} Imtiaz Ahmed. All rights reserved.</p>
             </div>
