@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { fadeIn } from "./Variants";
 
 const AboutMe = () => {
     return (
@@ -14,9 +15,11 @@ const AboutMe = () => {
                 <div className="p-8 flex flex-col justify-center w-full md:w-2/3">
                     <motion.h2
                         className="text-3xl font-bold mb-4"
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
+                        initial={{ opacity: 0, x: -20 }}
+
+                        variants={fadeIn("up", 0.2)}
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0.7 }}
                     >
                         About Me
                     </motion.h2>
@@ -24,8 +27,10 @@ const AboutMe = () => {
                     <motion.p
                         className="text-lg mb-4"
                         initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
+
+                        variants={fadeIn("up", 0.2)}
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0.7 }}
                     >
                         When I first started programming, it felt overwhelming. But with
                         time, practice, and persistence, I became confident in solving
@@ -37,8 +42,10 @@ const AboutMe = () => {
                     <motion.p
                         className="text-lg"
                         initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
+
+                        variants={fadeIn("up", 0.2)}
+                        whileInView={"show"}
+                        viewport={{ once: false, amount: 0.7 }}
                     >
                         Outside of coding, I enjoy watching movies and exploring new cultures.
                         These interests help me stay creative and think outside the box. As a
@@ -50,9 +57,11 @@ const AboutMe = () => {
                 {/* Right - Image */}
                 <motion.div
                     className="w-full md:w-1/3 bg-gray-800 flex items-center justify-center p-4"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
+                    initial={{ opacity: 0, x: -20 }}
+
+                    variants={fadeIn("up", 0.2)}
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}
                 >
                     <img
                         src="your-image-link.jpg"
