@@ -5,9 +5,21 @@ import { Typewriter } from "react-simple-typewriter";
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Banner = () => {
+    const handleResumeAction = () => {
+        window.open(
+            "https://drive.google.com/file/d/1eidWndFBsogT_QG2XkaYBtG6aoK1x0KI/view?usp=drive_link",
+            "_blank"
+        );
+
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "https://drive.google.com/uc?export=download&id=1eidWndFBsogT_QG2XkaYBtG6aoK1x0KI";
+        downloadLink.download = "Imtiaz_Ahmed_Resume.pdf";
+        downloadLink.click();
+    };
     return (
         <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-12 md:py-20 relative">
-            {/* Left Side - Profile Image */}
+
             <motion.div
                 className="md:w-1/2 flex justify-center"
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -21,7 +33,7 @@ const Banner = () => {
                 />
             </motion.div>
 
-            {/* Right Side - Text */}
+
             <motion.div
                 className="md:w-1/2 text-center md:text-left mt-8 md:mt-0"
                 initial={{ opacity: 0, x: 50 }}
@@ -38,18 +50,18 @@ const Banner = () => {
                         loop={false}
                         cursor
                         cursorStyle="|"
-                        typeSpeed={80}
+                        typeSpeed={100}
                         deleteSpeed={50}
+                        delaySpeed={1000}
                     />
                 </h2>
                 <p className="text-gray-300 mt-4">
                     Passionate about building efficient and scalable web applications.
                 </p>
 
-                {/* Resume Button */}
+
                 <motion.a
-                    href="your-resume-link.pdf"
-                    download
+                    onClick={handleResumeAction}
                     className="inline-block mt-6 px-6 py-3 text-white bg-[#00FF88] rounded transition-all duration-300 hover:bg-[#00CC66]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
@@ -57,7 +69,7 @@ const Banner = () => {
                     Download Resume
                 </motion.a>
 
-                {/* Social Icons - Mobile & Tablet (Below Resume Button) */}
+
                 <div className="flex md:hidden justify-center gap-6 mt-6">
                     <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
                         <FaGithub className="text-[#00FF88] text-3xl transition-all duration-300 hover:text-[#00CC66]" />
