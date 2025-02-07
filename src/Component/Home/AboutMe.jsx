@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "./Variants";
+import image from "../../assets/images/Adobe Express - file.jpg"
 
 const AboutMe = () => {
     return (
@@ -64,9 +65,9 @@ const AboutMe = () => {
                     viewport={{ once: false, amount: 0.7 }}
                 >
                     <img
-                        src="your-image-link.jpg"
+                        src={image}
                         alt="Imtiaz Ahmed"
-                        className="w-48 h-48 rounded-full object-cover border-4 border-gray-700"
+                        className="w-48 h-48 rounded-full  border-4 border-gray-700"
                     />
                 </motion.div>
             </motion.div>

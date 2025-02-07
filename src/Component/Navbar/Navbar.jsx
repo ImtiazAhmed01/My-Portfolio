@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
+import logo from "../../assets/favicon-32x32.png"
+import { motion } from "framer-motion";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const handleResumeAction = () => {
+        window.open(
+            "https://drive.google.com/file/d/1eidWndFBsogT_QG2XkaYBtG6aoK1x0KI/view?usp=drive_link",
+            "_blank"
+        );
+
+
+        const downloadLink = document.createElement("a");
+        downloadLink.href = "https://drive.google.com/uc?export=download&id=1eidWndFBsogT_QG2XkaYBtG6aoK1x0KI";
+        downloadLink.download = "Imtiaz_Ahmed_Resume.pdf";
+        downloadLink.click();
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,37 +35,34 @@ const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink to="/" className={({ isActive }) =>
-                    `px-4 py-2 rounded ${isActive ? "bg-[#00CC66] text-white" : "text-[#00FF88]"} hover:bg-[#00CC66] hover:text-white transition-all duration-300`
-                }>
+                <Link to="/" spy={true} smooth={true} offset={0} duration={500} className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300"
+                >
                     Home
-                </NavLink>
+                </Link>
             </li>
             <li className="mx-1">
-                <a href="#aboutme" className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
+                <Link to='aboutme' spy={true} smooth={true} offset={-50} duration={500} className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
                     About Me
-                </a>
+                </Link>
+                {/* <a href="#aboutme" className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
+                    About Me
+                </a> */}
             </li>
             <li className="mx-1">
-                <NavLink to="/skills" className={({ isActive }) =>
-                    `px-4 py-2 rounded ${isActive ? "bg-[#00CC66] text-white" : "text-[#00FF88]"} hover:bg-[#00CC66] hover:text-white transition-all duration-300`
-                }>
+                <Link to="skills" spy={true} smooth={true} offset={-50} duration={500} className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300"
+                >
                     Skills
-                </NavLink>
+                </Link>
             </li>
             <li className="mx-1">
-                <NavLink to="/projects" className={({ isActive }) =>
-                    `px-4 py-2 rounded ${isActive ? "bg-[#00CC66] text-white" : "text-[#00FF88]"} hover:bg-[#00CC66] hover:text-white transition-all duration-300`
-                }>
+                <Link to="projects" spy={true} smooth={true} offset={-50} duration={500} className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
                     Projects
-                </NavLink>
+                </Link>
             </li>
             <li className="mx-1">
-                <NavLink to="/contact" className={({ isActive }) =>
-                    `px-4 py-2 rounded ${isActive ? "bg-[#00CC66] text-white" : "text-[#00FF88]"} hover:bg-[#00CC66] hover:text-white transition-all duration-300`
-                }>
+                <Link to="contact" className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
                     Contact
-                </NavLink>
+                </Link>
             </li>
         </>
     );
@@ -70,8 +82,11 @@ const Navbar = () => {
 
                 {/* Navbar Logo */}
                 <div className="navbar-start">
-                    <NavLink to="/" className="text-xl font-bold text-[#00FF88] hover:text-[#00CC66] transition-all duration-300">
-                        Imtiaz Ahmed
+                    <NavLink
+                        to="/"
+                        className="btn btn-ghost normal-case md:text-xl font-bold text-[#00FF88]"
+                    >
+                        <img src={logo} alt="" /> Imtiaz Ahmed
                     </NavLink>
                 </div>
 
@@ -82,22 +97,26 @@ const Navbar = () => {
 
                 {/* Resume Download Button */}
                 <div className="navbar-end">
-                    <a href="https://drive.google.com/file/d/1eidWndFBsogT_QG2XkaYBtG6aoK1x0KI/view?usp=sharing"
-                        download
-                        className="px-5 py-2 rounded bg-[#00FF88] text-black font-semibold transition-all duration-300 hover:bg-[#00CC66]"
+                    <motion.a
+                        onClick={handleResumeAction}
+                        className="inline-block py-2 px-6 text-black bg-[#00FF88] rounded transition-all duration-300 hover:bg-[#00CC66]"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
                         Download Resume
-                    </a>
+                    </motion.a>
                 </div>
             </div>
 
             {/* Mobile Dropdown Menu */}
-            {isMenuOpen && (
-                <div className="absolute top-[60px] left-0 w-full bg-[#0A0F0D] shadow-md lg:hidden">
-                    <ul className="menu flex flex-col items-center py-3">{links}</ul>
-                </div>
-            )}
-        </div>
+            {
+                isMenuOpen && (
+                    <div className="absolute top-[60px] left-0 w-full bg-[#0A0F0D] shadow-md lg:hidden">
+                        <ul className="menu flex flex-col items-center py-3">{links}</ul>
+                    </div>
+                )
+            }
+        </div >
     );
 };
 

@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+// import image from '../../assets/images/IMG_20241207_132634_enhanced.jpg.png'
+import image from '../../assets/images/Adobe Express - file.png'
 
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -18,7 +20,7 @@ const Banner = () => {
         downloadLink.click();
     };
     return (
-        <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-12 md:py-20 relative">
+        <section className="flex flex-col md:flex-row items-center justify-between px-6 mt-3 md:px-12 py-12 md:py-20 relative" id="/">
 
             <motion.div
                 className="md:w-1/2 flex justify-center"
@@ -27,7 +29,7 @@ const Banner = () => {
                 transition={{ duration: 0.8 }}
             >
                 <img
-                    src="your-image-url.jpg"
+                    src={image}
                     alt="Imtiaz Ahmed"
                     className="w-72 h-72 rounded-full shadow-lg"
                 />
@@ -62,7 +64,7 @@ const Banner = () => {
 
                 <motion.a
                     onClick={handleResumeAction}
-                    className="inline-block mt-6 px-6 py-3 text-white bg-[#00FF88] rounded transition-all duration-300 hover:bg-[#00CC66]"
+                    className="inline-block mt-6 px-6 py-3 text-black bg-[#00FF88] rounded transition-all duration-300 hover:bg-[#00CC66]"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                 >

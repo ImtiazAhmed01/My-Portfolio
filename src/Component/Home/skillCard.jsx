@@ -53,7 +53,7 @@ const SkillCard = () => {
     };
 
     return (
-        <div className="bg-[#0f172a] min-h-screen p-8">
+        <div className="bg-black min-h-screen p-8" id="skills">
             <h1 className="text-3xl font-bold text-white text-center mb-8">My Skills</h1>
 
             {/* Frontend Skills */}
@@ -68,7 +68,7 @@ const SkillCard = () => {
                 {frontendSkills.map((skill, index) => (
                     <motion.div
                         key={index}
-                        className="skill-card bg-[#1e293b] text-white p-4 rounded-2xl shadow-lg cursor-pointer"
+                        className="skill-card bg-neutral-900 text-white p-4 rounded-2xl shadow-lg cursor-pointer hover:-transition-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-green-800"
                         initial='hidden'
                         variants={fadeIn("up", 0.2)}
                         whileInView={"show"}
@@ -78,7 +78,7 @@ const SkillCard = () => {
                         <img src={skill.icon} alt={skill.name} className="w-12 h-12 mb-2" />
                         <h3 className="text-xl font-bold">{skill.name}</h3>
                         <p>{skill.description}</p>
-                        <p className="text-lg font-semibold mt-2">{skill.percentage}%</p>
+
                     </motion.div>
                 ))}
             </div>
@@ -94,7 +94,7 @@ const SkillCard = () => {
                 {backendSkills.map((skill, index) => (
                     <motion.div
                         key={index}
-                        className="skill-card bg-[#1e293b] text-white p-4 rounded-2xl shadow-lg cursor-pointer"
+                        className="skill-card bg-neutral-900 text-white p-4 rounded-2xl shadow-lg cursor-pointer hover:-transition-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-green-800"
                         initial='hidden'
 
                         variants={fadeIn("up", 0.2)}
@@ -105,7 +105,7 @@ const SkillCard = () => {
                         <img src={skill.icon} alt={skill.name} className="w-12 h-12 mb-2" />
                         <h3 className="text-xl font-bold">{skill.name}</h3>
                         <p>{skill.description}</p>
-                        <p className="text-lg font-semibold mt-2">{skill.percentage}%</p>
+
                     </motion.div>
                 ))}
             </div>
@@ -120,7 +120,7 @@ const SkillCard = () => {
                 {tools.map((tool, index) => (
                     <motion.div
                         key={index}
-                        className="skill-card bg-[#1e293b] text-white p-4 rounded-2xl shadow-lg cursor-pointer"
+                        className="skill-card bg-neutral-900 text-white p-4 rounded-2xl shadow-lg cursor-pointer hover:-transition-y-5 hover:scale-105 hover:shadow-2xl hover:shadow-green-800"
                         initial='hidden'
 
                         variants={fadeIn("up", 0.2)}
@@ -131,7 +131,7 @@ const SkillCard = () => {
                         <img src={tool.icon} alt={tool.name} className="w-12 h-12 mb-2" />
                         <h3 className="text-xl font-bold">{tool.name}</h3>
                         <p>{tool.description}</p>
-                        <p className="text-lg font-semibold mt-2">{tool.percentage}%</p>
+
                     </motion.div>
                 ))}
             </div>
