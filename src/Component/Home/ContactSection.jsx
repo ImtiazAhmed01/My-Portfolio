@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { fadeIn } from './Variants.js';
 
 const ContactSection = () => {
     return (
@@ -10,8 +11,12 @@ const ContactSection = () => {
                 {/* Contact Details Section (Now animating from right) */}
                 <motion.div
                     initial={{ x: 100, opacity: 0 }}  // Changed x: -100 to 100
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8 }}
+                    // animate={{ x: 0, opacity: 1 }}
+                    // transition={{ duration: 0.8 }}
+
+                    variants={fadeIn("up", 0.2)}
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}
                     className="md:w-1/2 lg:pl-36"
                 >
                     <div className="my-8 text-center md:text-left">
@@ -52,13 +57,17 @@ const ContactSection = () => {
                 </motion.div>
 
                 {/* Vertical Divider */}
-                <div className="h-96 w-0.5 bg-gray-400 mx-8"></div>
+                <div className="hidden md:block h-96 w-0.5 bg-gray-400 mx-8"></div>
 
                 {/* Contact Form Section (Now animating from left) */}
                 <motion.div
                     initial={{ x: -40, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 0.8 }}
+                    // animate={{ x: 0, opacity: 1 }}
+                    // transition={{ duration: 0.8 }}
+
+                    variants={fadeIn("up", 0.2)}
+                    whileInView={"show"}
+                    viewport={{ once: false, amount: 0.7 }}
                     className="md:w-1/2 mt-8 md:mt-0"
                 >
                     <form className="bg-gray-800 p-8 rounded-lg shadow-md">
