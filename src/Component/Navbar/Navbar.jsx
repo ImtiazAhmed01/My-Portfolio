@@ -60,7 +60,7 @@ const Navbar = () => {
                 </Link>
             </li>
             <li className="mx-1">
-                <Link to="contact" className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
+                <Link to="contact" spy={true} smooth={true} offset={-50} duration={500} className="px-4 py-2 rounded text-[#00FF88] hover:bg-[#00CC66] hover:text-white transition-all duration-300">
                     Contact
                 </Link>
             </li>
