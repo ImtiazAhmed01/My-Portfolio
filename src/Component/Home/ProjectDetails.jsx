@@ -8,7 +8,7 @@ const ProjectDetails = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:5000/projects/${id}`)
+            .get(`https://portfolio-server-three-lemon.vercel.app/projects/${id}`)
             .then((response) => setProject(response.data))
             .catch((error) => console.error("Error fetching project details:", error));
     }, [id]);

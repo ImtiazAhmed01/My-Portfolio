@@ -12,7 +12,7 @@ const SkillCard = () => {
 
     useEffect(() => {
         // Fetch frontend skills
-        axios.get("http://localhost:5000/skills")
+        axios.get("https://portfolio-server-three-lemon.vercel.app/skills")
             .then((response) => {
                 console.log(response.data);
                 setFrontendSkills(response.data);
@@ -24,7 +24,7 @@ const SkillCard = () => {
             });
 
         // Fetch backend skills
-        axios.get("http://localhost:5000/backendskills")
+        axios.get("https://portfolio-server-three-lemon.vercel.app/backendskills")
             .then((response) => {
                 console.log(response.data);
                 setBackendSkills(response.data);
@@ -34,7 +34,7 @@ const SkillCard = () => {
             .catch((error) => {
                 console.error("Error fetching backend skills:", error);
             });
-        axios.get("http://localhost:5000/tools")
+        axios.get("https://portfolio-server-three-lemon.vercel.app/tools")
             .then((response) => {
                 console.log(response.data);
                 settools(response.data);

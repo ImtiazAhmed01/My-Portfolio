@@ -9,7 +9,7 @@ const Projects = () => {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5000/projects")
+            .get("https://portfolio-server-three-lemon.vercel.app/projects")
             .then((response) => setProjects(response.data))
             .catch((error) => console.error("Error fetching projects:", error));
     }, []);
