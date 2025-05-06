@@ -9,7 +9,7 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const handleResumeAction = () => {
         window.open(
-            "https://drive.google.com/file/d/1eidWndFBsogT_QG2XkaYBtG6aoK1x0KI/view?usp=drive_link",
+            "https://drive.google.com/file/d/1EWtLUm_iJaBF9HtxQc6nlb0touFnztFY/view?usp=sharing",
             "_blank"
         );
 
