@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from './Variants.js';
 import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
+    const form = useRef()
+    const [sent, setSent] = useState(false);
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
-            .sendForm('service_7w7hl5s', 'template_rc0ke4g', form.current, {
-                publicKey: 'YOUR_PUBLIC_KEY',
+            .sendForm('service_i16di8x', 'template_rc0ke4g', form.current, {
+                publicKey: 'HKrsrYC-31ttxYPQL',
             })
             .then(
                 () => {
                     console.log('SUCCESS!');
+                    setSent(true)
+                    form.current.reset()
                 },
                 (error) => {
                     console.log('FAILED...', error.text);
@@ -87,10 +91,10 @@ const ContactSection = () => {
                     viewport={{ once: false, amount: 0.7 }}
                     className="md:w-1/2 mt-8 md:mt-0"
                 >
-                    <form className="bg-gray-800 p-8 rounded-lg shadow-md">
+                    <form ref={form} className="bg-gray-800 p-8 rounded-lg shadow-md" onSubmit={sendEmail}>
                         <div className="mb-4">
                             <label htmlFor="name" className="block text-sm font-medium mb-2">Your Name</label>
-                            <input type="text" id="name" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="John Doe" />
+                            <input type="text" id="name" name="name" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="John Doe" />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
@@ -101,6 +105,7 @@ const ContactSection = () => {
                             <textarea id="message" name="message" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="Write your message..." rows="4"></textarea>
                         </div>
                         <button type="submit" className="px-6 py-2 bg-[#00FF88] hover:bg-teal-400 text-black font-semibold rounded-lg">Submit</button>
+                        {sent && <p className="text-green-600 mt-2">Your message has been sent.</p>}
                     </form>
                 </motion.div>
             </div>
