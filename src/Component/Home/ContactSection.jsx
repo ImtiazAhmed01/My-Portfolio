@@ -1,8 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from './Variants.js';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs
+            .sendForm('service_7w7hl5s', 'template_rc0ke4g', form.current, {
+                publicKey: 'YOUR_PUBLIC_KEY',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+    };
     return (
         <div className="bg-black text-white p-12 flex flex-col items-center" id="contact">
             <h2 className="text-2xl font-bold text-[#00FF88] mb-10 text-center">Let's Connect</h2>
@@ -77,11 +94,11 @@ const ContactSection = () => {
                         </div>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-sm font-medium mb-2">Your Email</label>
-                            <input type="email" id="email" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="email@example.com" />
+                            <input type="email" id="email" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" name="email" placeholder="email@example.com" />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="message" className="block text-sm font-medium mb-2">Wrrite your message</label>
-                            <textarea id="message" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="Write your message..." rows="4"></textarea>
+                            <textarea id="message" name="message" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="Write your message..." rows="4"></textarea>
                         </div>
                         <button type="submit" className="px-6 py-2 bg-[#00FF88] hover:bg-teal-400 text-black font-semibold rounded-lg">Submit</button>
                     </form>
