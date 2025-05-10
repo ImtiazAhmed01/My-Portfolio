@@ -80,7 +80,7 @@ const ContactSection = () => {
                             <input type="email" id="email" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="email@example.com" />
                         </div>
                         <div className="mb-4">
-                            <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                            <label htmlFor="message" className="block text-sm font-medium mb-2">Wrrite your message</label>
                             <textarea id="message" className="w-full p-2 rounded-lg bg-gray-900 text-gray-100 focus:outline-none" placeholder="Write your message..." rows="4"></textarea>
                         </div>
                         <button type="submit" className="px-6 py-2 bg-[#00FF88] hover:bg-teal-400 text-black font-semibold rounded-lg">Submit</button>
