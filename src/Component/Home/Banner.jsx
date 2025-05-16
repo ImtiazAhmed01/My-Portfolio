@@ -73,14 +73,14 @@ const Banner = () => {
 
 
                 <div className="flex md:hidden justify-center gap-6 mt-6">
-                    <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/ImtiazAhmed01" target="_blank" rel="noopener noreferrer">
                         <FaGithub className="text-[#00FF88] text-3xl transition-all duration-300 hover:text-[#00CC66]" />
                     </a>
-                    <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/imtiaz-ahmed-25a357201" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="text-[#00FF88] text-3xl transition-all duration-300 hover:text-[#00CC66]" />
                     </a>
-                    <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter className="text-[#00FF88] text-3xl transition-all duration-300 hover:text-[#00CC66]" />
+                    <a href="https://www.facebook.com/imtiaz.ahmedar" target="_blank" rel="noopener noreferrer">
+                        <FaFacebook className="text-[#00FF88] text-3xl transition-all duration-300 hover:text-[#00CC66]" />
                     </a>
                 </div>
             </motion.div>
